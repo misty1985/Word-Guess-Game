@@ -53,7 +53,7 @@ body {
 }
 
 
-.container-fluid {
+.wrapper {
 	min-width: 100%;
 	max-width: 100%;
 	margin: 0 auto;
@@ -85,7 +85,6 @@ body {
 .content {
 	padding: 0 270px 0 270px;
 }
-
 
 
 .left-sidebar {
