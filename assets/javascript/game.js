@@ -119,4 +119,10 @@ function resetGame() {
                                 wins++;
                                 hasFinished = true;
                             }
-
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
