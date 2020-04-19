@@ -42,85 +42,81 @@ var hasFinished = false;
 var wins = 0;
 
 
-remainingGuesses = maxTries;
-gameStarted = false;
+function resetGame() {
+    remainingGuesses = maxTries;
+    gameStarted = false;
 
-currentWordIndex = Math.floor(Math.random() * (selectableWords.length));
+    currentWordIndex = Math.floor(Math.random() * (selectableWords.length));
 
-guessedLetters = [];
-guessingWord = [];
+    guessedLetters = [];
+    guessingWord = [];
 
-for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
-    guessingWord.push("_");
-}
+    for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
+        guessingWord.push("_");
+    }
 
+    document.getElementById("youWin").src == "display: none";
+    document.getElementById("gameOver").style.cssText = "display: none";
+    document.getElementById("playAgain").style.cssText = "display: none";
 
+    function updateDisplay() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        document.getElementById("totalWins").innerText = wins;
+        document.getElementById("currentWord").innerText = "";
+        for (var i = 0; i < guessingWord.length; i++) {
+            document.getElementById("currentWord").innerText += guessingWord[i];
+        }
+        document.getElementById("remainingGuesses").innerText = remainingGuesses;
+        document.getElementById("guessedLetters").innerText = guessedLetters;
+        if (remainingGuesses <= 0) {
+            document.getElementById("gameOver").style.cssText = "display: block";
+            document.getElementById("playAgain").style.cssText = "display:block";
+            hasFinished = true;
+        }
 
 
+        document.onkeydown = function (event) {
+            if (hasFinished) {
+                resetGame();
+                hasFinished = false;
+            } else {
+                if (event.keyCode >= 65 && event.keyCode <= 90) {
+                    makeGuess(event.key.toLowerCase());
+                }
 
+                function makeGuess(letter) {
+                    if (remainingGuesses > 0) {
+                        if (!gameStarted) {
+                            gameStarted = true;
+                        }
+                        if (guessedLetters.indexOf(letter) === -1) {
+                            guessedLetters.push(letter);
+                            evaluateGuess(letter);
+                        }
+                    }
 
+                    updateDisplay();
+                    checkWin();
 
+                    for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
+                        if (selectableWords[currentWordIndex][i] === letter) {
+                            positions.push(i);
+                        }
+                    }
 
+                    if (positions.length <= 0) {
+                        remainingGuesses--;
+                    } else {
 
+                        for (var i = 0; i < positions.length; i++) {
+                            guessingWord[positions[i]] = letter;
+                        }
 
+                        function checkWin() {
+                            if (guessingWord.indexOf("_") === -1) {
+                                document.getElementById("youWin").style.cssText = "display: block";
+                                document.getElementById("playAgain").style.cssText = "display: block";
+                                wins++;
+                                hasFinished = true;
+                            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <audio controls id="music">
-<source src="mj.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-
-<p>Click the buttons to play or pause the music.</p>
-
-<button onclick="play()" type="button">Play </button>
-<button onclick="pause()" type="button">Pause</button>
-
-<script>
-var myMusic= document.getElementById("music");
-function play() {
-myMusic.play();
-}
-
-function pause() {
-myMusic.pause();
-}
-</script> */}
-
-// function play() {
-//     var audio = new Audio();
-//     audio.play();
-// }
