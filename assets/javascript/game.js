@@ -28,7 +28,7 @@ var selectableWords =
         Arbok, Persian, Magnemite, Koffing, Omastar,
         Raichu, Golduck, Farfetchd, Rhyhorn, Kabutops,
         Sandshrew, Mankey, Doduo, Rhydon, Aerodactyl,
-        Sandslash, Primeape, Dodrio, Chansey, Snorlax,
+        Sandslash, Primeape, Dodrio, Chansey, Snorlax 
     ];
 
 const maxTries = 10;
