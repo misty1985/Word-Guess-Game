@@ -7,8 +7,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -18,7 +18,8 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-article, aside, details, figcaption, figure,
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -41,76 +42,4 @@ table {
 	border-spacing: 0;
 }
 
-html {
-	height: 100%;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-	display: block;
-}
-body {
-	font: 12px/18px Arial, sans-serif;
-	height: 100%;
-}
 
-
-.wrapper {
-	min-width: 100%;
-	max-width: 100%;
-	margin: 0 auto;
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-}
-
-.header {
-	height: 40px;
-	background: #FFE680;
-}
-
-.middle {
-	width: 100%;
-	padding: 0 0 20px;
-	position: relative;
-}
-.middle:after {
-	display: table;
-	clear: both;
-	content: '';
-}
-.container {
-	width: 100%;
-	float: left;
-	overflow: hidden;
-}
-.content {
-	padding: 0 270px 0 270px;
-}
-
-
-.left-sidebar {
-	float: left;
-	width: 250px;
-	margin-left: -100%;
-	position: relative;
-	background: #B5E3FF;
-}
-
-
-.right-sidebar {
-	float: left;
-	width: 250px;
-	margin-left: -250px;
-	position: relative;
-	background: #FFACAA;
-}
-
-
-
-.footer {
-	margin: -20px auto 0;
-	min-width: auto;
-	max-width: auto;
-	height: 20px;
-	background: #BFF08E;
-	position: relative;
-}
