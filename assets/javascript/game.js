@@ -106,7 +106,7 @@ function resetGame() {
 
                         function checkWin() {
                             if (guessingWord.indexOf("_") === -1) {
-                                document.getElementById("youWin").style.cssText = "display: block";
+                                document.getElementById("youWin").style.csstext = "display: block";
                                 document.getElementById("playAgain").style.cssText = "display: block";
                                 wins++;
                                 hasFinished = true;
