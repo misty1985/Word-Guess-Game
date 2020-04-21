@@ -47,9 +47,9 @@ function resetGame() {
         guessingWord.push("_");
     }
 
-    document.getElementById("youWin").src == "display: none";
-    document.getElementById("gameOver").style.cssText = "display: none";
-    document.getElementById("playAgain").style.cssText = "display: none";
+    document.getElementById("youwin").src == "display: none";
+    document.getElementById("gameover") = "display: none";
+    document.getElementById("playagain").style.cssText = "display: none";
 
     function updateDisplay() {
 

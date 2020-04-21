@@ -32,6 +32,11 @@ audio {
 	width: 25%;
   }
 
+#playagain, 
+#gameover, 
+#youwin { 
+    display: none;}
+
   .middle, h1,h2,h3,
   h4,h5,h6 {
 	padding: 5px;
